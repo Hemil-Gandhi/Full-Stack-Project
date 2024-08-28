@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signature Spice Carousel</title>
+    <style>
+      body {
+        font-family: "Georgia", serif;
+        background-color: #f8f3e6;
+        color: #4d331f;
+        margin: 0;
+        padding: 0;
+      }
+
+      .carousel-container {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 20px;
+        position: relative;
+      }
+
+      .carousel {
+        display: flex;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .carousel-item {
+        min-width: 33.33%; /* Show 3 images at a time */
+        transition: transform 0.5s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .carousel-item img {
+        width: 90%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+      }
+
+      .carousel-item h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: #d19938;
+      }
+
+      /* Carousel buttons */
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .prev-btn {
+        left: 10px;
+      }
+
+      .next-btn {
+        right: 10px;
+      }
+
+      /* Optional: Styling for the next and prev buttons */
+      .carousel-btn:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel-container">
+      <div class="carousel">
+        <div class="carousel-item">
+          <img src="./public/images/vadodara.jpg" alt="Vadodara Branch" />
+          <h3>Vadodara Branch</h3>
+        </div>
+        <div class="carousel-item">
+          <img src="./public/images/aanad.jpg" alt="Anand Branch" />
+          <h3>Anand Branch</h3>
+        </div>
+        <div class="carousel-item">
+          <img src="./public/images/ahmedabad.jpg" alt="Ahmedabad Branch" />
+          <h3>Ahmedabad Branch</h3>
+        </div>
+        <div class="carousel-item">
+          <img src="./public/images/rajkot.jpg" alt="Rajkot Branch" />
+          <h3>Rajkot Branch</h3>
+        </div>
+        <div class="carousel-item">
+          <img src="./public/images/surat.jpg" alt="Surat Branch" />
+          <h3>Surat Branch</h3>
+        </div>
+      </div>
+      <button class="carousel-btn prev-btn" onclick="prevSlide()">
+        &#10094;
+      </button>
+      <button class="carousel-btn next-btn" onclick="nextSlide()">
+        &#10095;
+      </button>
+    </div>
+
+    <script>
+      const carousel = document.querySelector(".carousel");
+      const items = document.querySelectorAll(".carousel-item");
+      let currentIndex = 0;
+      const totalItems = items.length;
+      const visibleItems = 3; // Number of images visible at one time
+
+      function updateCarousel() {
+        const offset = (currentIndex * -100) / visibleItems;
+        carousel.style.transform = `translateX(${offset}%)`;
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCarousel();
+      }
+
+      // Adjust carousel on window resize to recalculate positions
+      window.addEventListener("resize", updateCarousel);
+
+      // Initial call to position carousel correctly
+      updateCarousel();
+    </script>
+  </body>
+</html>

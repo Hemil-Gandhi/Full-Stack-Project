@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Real Kathiyawadi Restaurant</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+    }
+    .image-container {
+      position: relative;
+      overflow: hidden;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+    }
+    .image-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      font-size: 16px;
+      text-align: center;
+    }
+    .info-container {
+      margin: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .info-header {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .info-content {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .info-button {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    .ratings-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .rating-item {
+      margin: 0 10px;
+    }
+    .rating-item .rating-value {
+      font-size: 24px;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+    .rating-item .rating-text {
+      font-size: 14px;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="image-grid">
+      <div class="image-container">
+        <img src="img_1.jpg"id="img-1" alt="Dish 1">
+        <div class="image-text">Dish 1</div>
+      </div>
+      <div class="image-container">
+        <img src="img_1.jpg" alt="Dish 2">
+        <div class="image-text">Dish 2</div>
+      </div>
+      <div class="image-container">
+        <img src="img_1.jpg"alt="Dish 3">
+        <div class="image-text">Dish 3</div>
+      </div>
+      <div class="image-container">
+        <img src="img_1.jpg"alt="Dish 4">
+        <div class="image-text">Dish 4</div>
+      </div>
+      <div class="image-container">
+        <img src="img_1.jpg"alt="Dish 5">
+        <div class="image-text">Dish 5</div>
+      </div>
+      <div class="image-container">
+        <img src="img_1.jpg">
+        <div class="image-text">Dish 6</div>
+      </div>
+    </div>
+  </div>
+  <div class="info-container">
+    <div class="info-header">Real Kathiyawadi Restaurant</div>
+    <div class="info-content">
+      Kathiyawadi, Gujarati, North Indian, Biryani, Chinese, Beverages
+      <br>
+      Sayajipura, Vadodara
+      <br>
+      Closed - Opens at 6:30pm
+    </div>
+    <div class="info-button">Direction</div>
+    <div class="info-button">Bookmark</div>
+    <div class="info-button">Share</div>
+    <div class="ratings-container">
+      <div class="rating-item">
+        <div class="rating-value">4.2</div>
+        <div class="rating-text">183 Dining Ratings</div>
+      </div>
+      <div class="rating-item">
+        <div class="rating-value">3.8</div>
+        <div class="rating-text">9,191 Delivery Ratings</div>
+      </div>
+    </div>
+    <div class="info-content">
+      <br>
+      <a href="#">Overview</a>
+      <a href="#">Order Online</a>
+      <a href="#">Reviews</a>
+      <a href="#">Photos</a>
+      <a href="#">Menu</a>
+    </div>
+  </div>
+</body>
+</html>
